@@ -235,19 +235,13 @@
 ]]
 
 
-if not ZashitaOtDebila then
-    getgenv().ZashitaOtDebila = {GeiNaGe}
-end
 
 for i, player in pairs(game.Players:GetPlayers()) do
     if player ~= game.Players.LocalPlayer then
-        if not ZashitaOtDebila[player] then
-            player.Chatted:Connect(function(message)
-                if string.find(string.lower(message), "do you like bananac") then
-                    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Bro, what the question, ofc im like that!", "All")
-                end
-            end)
-            ZashitaOtDebila[player] = true
+    player.Chatted:Connect(function(message)
+        if string.find(string.lower(message), "do you like bananac") then
+            game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Bro, what the question, ofc im like that!", "All")
         end
-    end
+    end)
+end
 end
