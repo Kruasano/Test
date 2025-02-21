@@ -1,0 +1,13 @@
+local Blacklist = {
+    {Name = "Timofej323841", Reason = "Toxic"},
+    {Name = "evgen_28645", Reason = "test"},
+    {Name = "Shaim_Shaim", Reason = "test"},
+    {Name = "Egor_Staff", Reason = "test"},
+    {Name = "Alexor130", Reason = "test"},
+    {Name = "Gt_XmaX", Reason = "test"},
+    {Name = "TheNewForceOfWind", Reason = "test"},
+    {Name = "1xZentox", Reason = "test"},
+    {Name = "RofMikaelson", Reason = "test"},
+    {Name = "Kornelov2011", Reason = "test"},
+    {Name = "Xentayp", Reason = "test"}
+}
