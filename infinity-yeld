@@ -6806,9 +6806,12 @@ addcmd("serverhop", {"shop"}, function(args, speaker)
     end
 end)
 
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+
 addcmd('joinplayer', {'joinp'}, function(args, speaker)
     local retries = 0
-    local PlaceId = 1234567890 -- Убедитесь, что это правильный PlaceId
+    local PlaceId = 2202352383 -- Убедитесь, что это правильный PlaceId
 
     function ToServer(User, Place)
         if args[2] == nil then
@@ -6830,22 +6833,21 @@ addcmd('joinplayer', {'joinp'}, function(args, speaker)
 
             notify('Join Player', 'Loading servers. Hold on a second.')
             local URL = "https://games.roblox.com/v1/games/" .. Place .. "/servers/Public?sortOrder=Asc&limit=100"
-            local Http = game:GetService("HttpService")
-            local response = Http:JSONDecode(game:HttpGet(URL))
+            local response = HttpService:JSONDecode(game:HttpGet(URL))
 
             if response and response.data then
                 for _, server in ipairs(response.data) do
                     for _, playerId in ipairs(server.playerIds) do
                         if playerId == UserId then
                             notify('Join Player', 'Joining ' .. User)
-                            game:GetService("TeleportService"):TeleportToPlaceInstance(Place, server.id, Players.LocalPlayer)
+                            TeleportService:TeleportToPlaceInstance(Place, server.id, Players.LocalPlayer)
                             return
                         end
                     end
                 end
                 notify('Join Error', 'Unable to join user.')
             else
-                notify('Join Error', 'Failed to retrieve server data.')
+                notify('Join Error', 'Failed to retrieve server data: ' .. tostring(response))
             end
         end)
 
@@ -6856,7 +6858,7 @@ addcmd('joinplayer', {'joinp'}, function(args, speaker)
                 notify('Join Error', 'Error while trying to join. Retrying ' .. retries .. '/3.')
                 ToServer(User, Place)
             else
-                notify('Join Error', 'Error while trying to join.')
+                notify('Join Error', 'Error while trying to join: ' .. errorMsg)
             end
         end
     end
