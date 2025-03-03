@@ -6809,6 +6809,9 @@ end)
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
 
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+
 addcmd('joinplayer', {'joinp'}, function(args, speaker)
     local retries = 0
     local PlaceId = 2202352383 -- Убедитесь, что это правильный PlaceId
@@ -6834,6 +6837,12 @@ addcmd('joinplayer', {'joinp'}, function(args, speaker)
             notify('Join Player', 'Loading servers. Hold on a second.')
             local URL = "https://games.roblox.com/v1/games/" .. Place .. "/servers/Public?sortOrder=Asc&limit=100"
             local response = HttpService:JSONDecode(game:HttpGet(URL))
+
+            -- Проверка содержимого ответа
+            if type(response) == "string" and response:sub(1, 1) == "<" then
+                notify('Join Error', 'Received HTML instead of JSON.')
+                return
+            end
 
             if response and response.data then
                 for _, server in ipairs(response.data) do
@@ -6865,6 +6874,7 @@ addcmd('joinplayer', {'joinp'}, function(args, speaker)
 
     ToServer(args[1], args[2])
 end)
+
 
 
 addcmd("exit", {}, function(args, speaker)
