@@ -273,47 +273,46 @@ local RayfieldLibrary = {
 		},
 
 		KruTest = {
-		    TextColor = Color3.fromRGB(230, 240, 240),
+		    TextColor = Color3.fromRGB(30, 30, 30), -- Темный текст для контраста
 		
-		    Background = Color3.fromRGB(50, 50, 50), -- Изменен на серый
-		    Topbar = Color3.fromRGB(60, 60, 60), -- Изменен на серый
-		    Shadow = Color3.fromRGB(40, 40, 40), -- Изменен на серый
+		    Background = Color3.fromRGB(240, 240, 240), -- Светлый фон
+		    Topbar = Color3.fromRGB(230, 230, 230), -- Светлая верхняя панель
+		    Shadow = Color3.fromRGB(220, 220, 220), -- Светлая тень
 		
-		    NotificationBackground = Color3.fromRGB(55, 55, 55), -- Изменен на серый
-		    NotificationActionsBackground = Color3.fromRGB(230, 240, 240),
+		    NotificationBackground = Color3.fromRGB(235, 235, 235), -- Светлый фон уведомлений
+		    NotificationActionsBackground = Color3.fromRGB(30, 30, 30), -- Темный фон для действий уведомлений
 		
-		    TabBackground = Color3.fromRGB(70, 70, 70), -- Изменен на серый
-		    TabStroke = Color3.fromRGB(80, 80, 80), -- Изменен на серый
-		    TabBackgroundSelected = Color3.fromRGB(100, 100, 100), -- Изменен на серый
-		    TabTextColor = Color3.fromRGB(210, 210, 210),
-		    SelectedTabTextColor = Color3.fromRGB(30, 30, 30),
+		    TabBackground = Color3.fromRGB(220, 220, 220), -- Светлый фон вкладок
+		    TabStroke = Color3.fromRGB(210, 210, 210), -- Светлая обводка вкладок
+		    TabBackgroundSelected = Color3.fromRGB(200, 200, 200), -- Светлый фон выбранной вкладки
+		    TabTextColor = Color3.fromRGB(30, 30, 30), -- Темный текст вкладки
+		    SelectedTabTextColor = Color3.fromRGB(255, 255, 255), -- Белый текст выбранной вкладки
 		
-		    ElementBackground = Color3.fromRGB(60, 60, 60), -- Изменен на серый
-		    ElementBackgroundHover = Color3.fromRGB(70, 70, 70), -- Изменен на серый
-		    SecondaryElementBackground = Color3.fromRGB(55, 55, 55), -- Изменен на серый
-		    ElementStroke = Color3.fromRGB(75, 75, 75), -- Изменен на серый
-		    SecondaryElementStroke = Color3.fromRGB(65, 65, 65), -- Изменен на серый
+		    ElementBackground = Color3.fromRGB(230, 230, 230), -- Светлый фон элементов
+		    ElementBackgroundHover = Color3.fromRGB(220, 220, 220), -- Светлый фон при наведении
+		    SecondaryElementBackground = Color3.fromRGB(235, 235, 235), -- Светлый вторичный фон элементов
+		    ElementStroke = Color3.fromRGB(210, 210, 210), -- Светлая обводка элементов
+		    SecondaryElementStroke = Color3.fromRGB(220, 220, 220), -- Светлая вторичная обводка элементов
 		
-		    SliderBackground = Color3.fromRGB(90, 90, 90), -- Изменен на серый
-		    SliderProgress = Color3.fromRGB(110, 110, 110), -- Изменен на серый
-		    SliderStroke = Color3.fromRGB(130, 130, 130), -- Изменен на серый
+		    SliderBackground = Color3.fromRGB(210, 210, 210), -- Светлый фон ползунка
+		    SliderProgress = Color3.fromRGB(190, 190, 190), -- Светлый прогресс ползунка
+		    SliderStroke = Color3.fromRGB(170, 170, 170), -- Светлая обводка ползунка
 		
-		    ToggleBackground = Color3.fromRGB(60, 60, 60), -- Изменен на серый
-		    ToggleEnabled = Color3.fromRGB(100, 100, 100), -- Изменен на серый
-		    ToggleDisabled = Color3.fromRGB(80, 80, 80), -- Изменен на серый
-		    ToggleEnabledStroke = Color3.fromRGB(130, 130, 130), -- Изменен на серый
-		    ToggleDisabledStroke = Color3.fromRGB(95, 95, 95), -- Изменен на серый
-		    ToggleEnabledOuterStroke = Color3.fromRGB(80, 80, 80), -- Изменен на серый
-		    ToggleDisabledOuterStroke = Color3.fromRGB(65, 65, 65), -- Изменен на серый
+		    ToggleBackground = Color3.fromRGB(230, 230, 230), -- Светлый фон переключателя
+		    ToggleEnabled = Color3.fromRGB(200, 200, 200), -- Светлый фон включенного переключателя
+		    ToggleDisabled = Color3.fromRGB(220, 220, 220), -- Светлый фон выключенного переключателя
+		    ToggleEnabledStroke = Color3.fromRGB(170, 170, 170), -- Светлая обводка включенного переключателя
+		    ToggleDisabledStroke = Color3.fromRGB(190, 190, 190), -- Светлая обводка выключенного переключателя
+		    ToggleEnabledOuterStroke = Color3.fromRGB(200, 200, 200), -- Светлая внешняя обводка включенного переключателя
+		    ToggleDisabledOuterStroke = Color3.fromRGB(220, 220, 220), -- Светлая внешняя обводка выключенного переключателя
 		
-		    DropdownSelected = Color3.fromRGB(70, 70, 70), -- Изменен на серый
-		    DropdownUnselected = Color3.fromRGB(55, 55, 55), -- Изменен на серый
+		    DropdownSelected = Color3.fromRGB(220, 220, 220), -- Светлый фон выбранного элемента выпадающего списка
+		    DropdownUnselected = Color3.fromRGB(235, 235, 235), -- Светлый фон невыбранного элемента выпадающего списка
 		
-		    InputBackground = Color3.fromRGB(60, 60, 60), -- Изменен на серый
-		    InputStroke = Color3.fromRGB(80, 80, 80), -- Изменен на серый
-		    PlaceholderColor = Color3.fromRGB(140, 140, 140)
+		    InputBackground = Color3.fromRGB(230, 230, 230), -- Светлый фон ввода
+		    InputStroke = Color3.fromRGB(210, 210, 210), -- Светлая обводка ввода
+		    PlaceholderColor = Color3.fromRGB(180, 180, 180) -- Светлый цвет заполнителя
 		},
-
 
 		AmberGlow = {
 			TextColor = Color3.fromRGB(255, 245, 230),
