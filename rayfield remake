@@ -277,7 +277,7 @@ local RayfieldLibrary = {
 		
 		    Background = Color3.fromRGB(0, 0, 0), -- Черный фон
 		    Topbar = Color3.fromRGB(20, 20, 20), -- Темная верхняя панель
-		    Shadow = Color3.fromRGB(10, 10, 10), -- Темная тень
+		    Shadow = Color3.fromRGB(200, 210, 220), -- Темная тень
 		
 		    NotificationBackground = Color3.fromRGB(15, 15, 15), -- Темный фон уведомлений
 		    NotificationActionsBackground = Color3.fromRGB(255, 255, 255), -- Белый фон для действий уведомлений
