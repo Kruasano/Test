@@ -1611,7 +1611,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			while true do
 				task.wait(math.random(180, 600))
 				RayfieldLibrary:Notify({
-					Title = "KruPremHub",
+					Title = "Rayfield Interface",
 					Content = "Enjoying this UI library? Find it at sirius.menu/discord",
 					Duration = 7,
 					Image = 4370033185,
@@ -3692,10 +3692,10 @@ if useStudio then
 
 	local Window = RayfieldLibrary:CreateWindow({
 		Name = "Rayfield Example Window",
-		LoadingTitle = "KruPremHub v2",
+		LoadingTitle = "Rayfield Interface Suite",
 		Theme = 'Default',
 		Icon = 0,
-		LoadingSubtitle = "by Kruasano",
+		LoadingSubtitle = "by Sirius",
 		ConfigurationSaving = {
 			Enabled = true,
 			FolderName = nil, -- Create a custom folder for your hub/game
