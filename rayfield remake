@@ -3695,7 +3695,7 @@ if useStudio then
 		LoadingTitle = "KruPremHub v2",
 		Theme = 'Default',
 		Icon = 0,
-		LoadingSubtitle = "by Sirius",
+		LoadingSubtitle = "by Kruasano",
 		ConfigurationSaving = {
 			Enabled = true,
 			FolderName = nil, -- Create a custom folder for your hub/game
