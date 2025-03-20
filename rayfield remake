@@ -3692,7 +3692,7 @@ if useStudio then
 
 	local Window = RayfieldLibrary:CreateWindow({
 		Name = "Rayfield Example Window",
-		LoadingTitle = "Rayfield Interface Suite",
+		LoadingTitle = "KruPremHub v2",
 		Theme = 'Default',
 		Icon = 0,
 		LoadingSubtitle = "by Sirius",
