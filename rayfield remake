@@ -566,6 +566,34 @@ local RayfieldLibrary = {
 			PlaceholderColor = Color3.fromRGB(150, 150, 160)
 		},
 
+		KruTest = {
+		    Background = Color3.fromRGB(30, 30, 30),
+		    Topbar = Color3.fromRGB(40, 40, 40),
+		    Shadow = Color3.fromRGB(20, 20, 20),
+		
+		    ElementBackground = Color3.fromRGB(50, 50, 50),
+		    ElementBackgroundHover = Color3.fromRGB(60, 60, 60),
+		    ElementStroke = Color3.fromRGB(220, 220, 220), -- Светлая обводка
+		
+		    SliderBackground = Color3.fromRGB(70, 70, 70),
+		    SliderProgress = Color3.fromRGB(100, 100, 100),
+		    SliderStroke = Color3.fromRGB(200, 200, 200), -- Светлая обводка
+		
+		    ToggleBackground = Color3.fromRGB(50, 50, 50),
+		    ToggleEnabled = Color3.fromRGB(80, 180, 80),
+		    ToggleDisabled = Color3.fromRGB(100, 100, 100),
+		    ToggleEnabledStroke = Color3.fromRGB(100, 200, 100),
+		    ToggleDisabledStroke = Color3.fromRGB(120, 120, 120),
+		
+		    DropdownSelected = Color3.fromRGB(60, 60, 60),
+		    DropdownUnselected = Color3.fromRGB(50, 50, 50),
+		
+		    InputBackground = Color3.fromRGB(50, 50, 50),
+		    InputStroke = Color3.fromRGB(200, 200, 200), -- Светлая обводка
+		    PlaceholderColor = Color3.fromRGB(150, 150, 150)
+		},
+
+
 		Serenity = {
 			TextColor = Color3.fromRGB(50, 55, 60),
 			Background = Color3.fromRGB(240, 245, 250),
