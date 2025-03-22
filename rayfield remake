@@ -77,7 +77,7 @@ local ConfigurationExtension = ".rfld"
 local settingsTable = {
 	General = {
 		-- if needs be in order just make getSetting(name)
-		rayfieldOpen = {Type = 'bind', Value = 'M', Name = 'Rayfield Keybind'},
+		rayfieldOpen = {Type = 'bind', Value = 'K', Name = 'Rayfield Keybind'},
 		-- buildwarnings
 		-- rayfieldprompts
 
@@ -95,7 +95,7 @@ local useStudio = RunService:IsStudio() or false
 
 local settingsCreated = false
 local cachedSettings
-
+--local prompt = useStudio and require(script.Parent.prompt) or loadWithTimeout('https://raw.githubusercontent.com/SiriusSoftwareLtd/Sirius/refs/heads/request/prompt.lua')
 local request = (syn and syn.request) or (fluxus and fluxus.request) or (http and http.request) or http_request or request
 
 
@@ -272,48 +272,47 @@ local RayfieldLibrary = {
 			PlaceholderColor = Color3.fromRGB(178, 178, 178)
 		},
 
-		KruTest = {
-		    TextColor = Color3.fromRGB(255, 255, 255), -- Белый текст
-		
-		    Background = Color3.fromRGB(0, 0, 0), -- Черный фон
-		    Topbar = Color3.fromRGB(20, 20, 20), -- Темная верхняя панель
-		    Shadow = Color3.fromRGB(200, 210, 220), -- Темная тень
-		
-		    NotificationBackground = Color3.fromRGB(15, 15, 15), -- Темный фон уведомлений
-		    NotificationActionsBackground = Color3.fromRGB(255, 255, 255), -- Белый фон для действий уведомлений
-		
-		    TabBackground = Color3.fromRGB(20, 20, 20), -- Темный фон вкладок
-		    TabStroke = Color3.fromRGB(30, 30, 30), -- Темная обводка вкладок
-		    TabBackgroundSelected = Color3.fromRGB(40, 40, 40), -- Темный фон выбранной вкладки
-		    TabTextColor = Color3.fromRGB(255, 255, 255), -- Белый текст вкладки
-		    SelectedTabTextColor = Color3.fromRGB(0, 0, 0), -- Черный текст выбранной вкладки
-		
-		    ElementBackground = Color3.fromRGB(30, 30, 30), -- Темный фон элементов
-		    ElementBackgroundHover = Color3.fromRGB(40, 40, 40), -- Темный фон при наведении
-		    SecondaryElementBackground = Color3.fromRGB(25, 25, 25), -- Темный вторичный фон элементов
-		    ElementStroke = Color3.fromRGB(50, 50, 50), -- Темная обводка элементов
-		    SecondaryElementStroke = Color3.fromRGB(40, 40, 40), -- Темная вторичная обводка элементов
-		
-		    SliderBackground = Color3.fromRGB(50, 50, 50), -- Темный фон ползунка
-		    SliderProgress = Color3.fromRGB(70, 70, 70), -- Темный прогресс ползунка
-		    SliderStroke = Color3.fromRGB(90, 90, 90), -- Темная обводка ползунка
-		
-		    ToggleBackground = Color3.fromRGB(30, 30, 30), -- Темный фон переключателя
-		    ToggleEnabled = Color3.fromRGB(50, 50, 50), -- Темный фон включенного переключателя
-		    ToggleDisabled = Color3.fromRGB(40, 40, 40), -- Темный фон выключенного переключателя
-		    ToggleEnabledStroke = Color3.fromRGB(90, 90, 90), -- Темная обводка включенного переключателя
-		    ToggleDisabledStroke = Color3.fromRGB(70, 70, 70), -- Темная обводка выключенного переключателя
-		    ToggleEnabledOuterStroke = Color3.fromRGB(60, 60, 60), -- Темная внешняя обводка включенного переключателя
-		    ToggleDisabledOuterStroke = Color3.fromRGB(40, 40, 40), -- Темная внешняя обводка выключенного переключателя
-		
-		    DropdownSelected = Color3.fromRGB(40, 40, 40), -- Темный фон выбранного элемента выпадающего списка
-		    DropdownUnselected = Color3.fromRGB(25, 25, 25), -- Темный фон невыбранного элемента выпадающего списка
-		
-		    InputBackground = Color3.fromRGB(30, 30, 30), -- Темный фон ввода
-		    InputStroke = Color3.fromRGB(50, 50, 50), -- Темная обводка ввода
-		    PlaceholderColor = Color3.fromRGB(100, 100, 100) -- Темный цвет заполнителя
-		},
+		Ocean = {
+			TextColor = Color3.fromRGB(230, 240, 240),
 
+			Background = Color3.fromRGB(20, 30, 30),
+			Topbar = Color3.fromRGB(25, 40, 40),
+			Shadow = Color3.fromRGB(15, 20, 20),
+
+			NotificationBackground = Color3.fromRGB(25, 35, 35),
+			NotificationActionsBackground = Color3.fromRGB(230, 240, 240),
+
+			TabBackground = Color3.fromRGB(40, 60, 60),
+			TabStroke = Color3.fromRGB(50, 70, 70),
+			TabBackgroundSelected = Color3.fromRGB(100, 180, 180),
+			TabTextColor = Color3.fromRGB(210, 230, 230),
+			SelectedTabTextColor = Color3.fromRGB(20, 50, 50),
+
+			ElementBackground = Color3.fromRGB(30, 50, 50),
+			ElementBackgroundHover = Color3.fromRGB(40, 60, 60),
+			SecondaryElementBackground = Color3.fromRGB(30, 45, 45),
+			ElementStroke = Color3.fromRGB(45, 70, 70),
+			SecondaryElementStroke = Color3.fromRGB(40, 65, 65),
+
+			SliderBackground = Color3.fromRGB(0, 110, 110),
+			SliderProgress = Color3.fromRGB(0, 140, 140),
+			SliderStroke = Color3.fromRGB(0, 160, 160),
+
+			ToggleBackground = Color3.fromRGB(30, 50, 50),
+			ToggleEnabled = Color3.fromRGB(0, 130, 130),
+			ToggleDisabled = Color3.fromRGB(70, 90, 90),
+			ToggleEnabledStroke = Color3.fromRGB(0, 160, 160),
+			ToggleDisabledStroke = Color3.fromRGB(85, 105, 105),
+			ToggleEnabledOuterStroke = Color3.fromRGB(50, 100, 100),
+			ToggleDisabledOuterStroke = Color3.fromRGB(45, 65, 65),
+
+			DropdownSelected = Color3.fromRGB(30, 60, 60),
+			DropdownUnselected = Color3.fromRGB(25, 40, 40),
+
+			InputBackground = Color3.fromRGB(30, 50, 50),
+			InputStroke = Color3.fromRGB(50, 70, 70),
+			PlaceholderColor = Color3.fromRGB(140, 160, 160)
+		},
 
 		AmberGlow = {
 			TextColor = Color3.fromRGB(255, 245, 230),
@@ -523,6 +522,48 @@ local RayfieldLibrary = {
 			InputBackground = Color3.fromRGB(255, 235, 240),
 			InputStroke = Color3.fromRGB(220, 190, 200),
 			PlaceholderColor = Color3.fromRGB(170, 130, 140)
+		},
+
+		KruTest = {
+		    TextColor = Color3.fromRGB(255, 255, 255), -- Белый текст
+		
+		    Background = Color3.fromRGB(0, 0, 0), -- Черный фон
+		    Topbar = Color3.fromRGB(20, 20, 20), -- Темная верхняя панель
+		    Shadow = Color3.fromRGB(200, 210, 220), -- Темная тень
+		
+		    NotificationBackground = Color3.fromRGB(15, 15, 15), -- Темный фон уведомлений
+		    NotificationActionsBackground = Color3.fromRGB(255, 255, 255), -- Белый фон для действий уведомлений
+		
+		    TabBackground = Color3.fromRGB(20, 20, 20), -- Темный фон вкладок
+		    TabStroke = Color3.fromRGB(30, 30, 30), -- Темная обводка вкладок
+		    TabBackgroundSelected = Color3.fromRGB(40, 40, 40), -- Темный фон выбранной вкладки
+		    TabTextColor = Color3.fromRGB(255, 255, 255), -- Белый текст вкладки
+		    SelectedTabTextColor = Color3.fromRGB(0, 0, 0), -- Черный текст выбранной вкладки
+		
+		    ElementBackground = Color3.fromRGB(30, 30, 30), -- Темный фон элементов
+		    ElementBackgroundHover = Color3.fromRGB(40, 40, 40), -- Темный фон при наведении
+		    SecondaryElementBackground = Color3.fromRGB(25, 25, 25), -- Темный вторичный фон элементов
+		    ElementStroke = Color3.fromRGB(50, 50, 50), -- Темная обводка элементов
+		    SecondaryElementStroke = Color3.fromRGB(40, 40, 40), -- Темная вторичная обводка элементов
+		
+		    SliderBackground = Color3.fromRGB(50, 50, 50), -- Темный фон ползунка
+		    SliderProgress = Color3.fromRGB(70, 70, 70), -- Темный прогресс ползунка
+		    SliderStroke = Color3.fromRGB(90, 90, 90), -- Темная обводка ползунка
+		
+		    ToggleBackground = Color3.fromRGB(30, 30, 30), -- Темный фон переключателя
+		    ToggleEnabled = Color3.fromRGB(50, 50, 50), -- Темный фон включенного переключателя
+		    ToggleDisabled = Color3.fromRGB(40, 40, 40), -- Темный фон выключенного переключателя
+		    ToggleEnabledStroke = Color3.fromRGB(90, 90, 90), -- Темная обводка включенного переключателя
+		    ToggleDisabledStroke = Color3.fromRGB(70, 70, 70), -- Темная обводка выключенного переключателя
+		    ToggleEnabledOuterStroke = Color3.fromRGB(60, 60, 60), -- Темная внешняя обводка включенного переключателя
+		    ToggleDisabledOuterStroke = Color3.fromRGB(40, 40, 40), -- Темная внешняя обводка выключенного переключателя
+		
+		    DropdownSelected = Color3.fromRGB(40, 40, 40), -- Темный фон выбранного элемента выпадающего списка
+		    DropdownUnselected = Color3.fromRGB(25, 25, 25), -- Темный фон невыбранного элемента выпадающего списка
+		
+		    InputBackground = Color3.fromRGB(30, 30, 30), -- Темный фон ввода
+		    InputStroke = Color3.fromRGB(50, 50, 50), -- Темная обводка ввода
+		    PlaceholderColor = Color3.fromRGB(100, 100, 100) -- Темный цвет заполнителя
 		},
 
 		DarkBlue = {
@@ -1025,7 +1066,10 @@ function RayfieldLibrary:Notify(data) -- action e.g open messages
 
 		newNotification.Visible = true
 
-		
+		if data.Actions then
+			warn('Rayfield | Not seeing your actions in notifications?')
+			print("Notification Actions are being sunset for now, keep up to date on when they're back in the discord. (sirius.menu/discord)")
+		end
 
 		-- Calculate textbounds and set initial values
 		local bounds = {newNotification.Title.TextBounds.Y, newNotification.Description.TextBounds.Y}
@@ -1555,12 +1599,11 @@ function RayfieldLibrary:CreateWindow(Settings)
 	LoadingFrame.Subtitle.TextTransparency = 1
 
 	LoadingFrame.Version.TextTransparency = 1
-	LoadingFrame.Title.Text = "KruPremHub v2"
-	LoadingFrame.Subtitle.Text = "KruPremHub v2"
-
+	LoadingFrame.Title.Text = Settings.LoadingTitle or "Rayfield"
+	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "Interface Suite"
 
 	if Settings.LoadingTitle ~= "Rayfield Interface Suite" then
-		LoadingFrame.Version.Text = "🤓"
+		LoadingFrame.Version.Text = "Rayfield UI"
 	end
 
 	if Settings.Icon and Settings.Icon ~= 0 and Topbar:FindFirstChild('Icon') then
@@ -3906,7 +3949,9 @@ if CEnabled and Main:FindFirstChild('Notice') then
 	TweenService:Create(Main.Notice.Title, TweenInfo.new(0.5, Enum.EasingStyle.Exponential), {TextTransparency = 0.1}):Play()
 end
 
-
+if not useStudio then
+	task.spawn(loadWithTimeout, "https://raw.githubusercontent.com/SiriusSoftwareLtd/Sirius/refs/heads/request/boost.lua")
+end
 
 task.delay(4, function()
 	RayfieldLibrary.LoadConfiguration()
@@ -3920,4 +3965,3 @@ task.delay(4, function()
 end)
 
 return RayfieldLibrary
-Kruasano4ka, lev
