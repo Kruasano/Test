@@ -786,10 +786,6 @@ local function ChangeTheme(Theme)
 	Main.Search.Input.PlaceholderColor3 = SelectedTheme.TextColor
 	Main.Search.UIStroke.Color = SelectedTheme.SecondaryElementStroke
 
-	if Main:FindFirstChild('Notice') then
-		Main.Notice.BackgroundColor3 = SelectedTheme.Background
-	end
-
 	for _, text in ipairs(Rayfield:GetDescendants()) do
 		if text.Parent.Parent ~= Notifications then
 			if text:IsA('TextLabel') or text:IsA('TextBox') then text.TextColor3 = SelectedTheme.TextColor end
@@ -1592,7 +1588,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Main.Size = UDim2.new(0, 420, 0, 100)
 	Main.Visible = true
 	Main.BackgroundTransparency = 1
-	if Main:FindFirstChild('Notice') then Main.Notice.Visible = false end
 	Main.Shadow.Image.ImageTransparency = 1
 
 	LoadingFrame.Title.TextTransparency = 1
@@ -3935,25 +3930,12 @@ if useStudio then
 	local Paragraph = Tab:CreateParagraph({Title = "Paragraph Example", Content = "Paragraph ExampleParagraph ExampleParagraph ExampleParagraph ExampleParagraph ExampleParagraph ExampleParagraph ExampleParagraph ExampleParagraph ExampleParagraph ExampleParagraph ExampleParagraph ExampleParagraph ExampleParagraph Example"})
 end
 
-if CEnabled and Main:FindFirstChild('Notice') then
-	Main.Notice.BackgroundTransparency = 1
-	Main.Notice.Title.TextTransparency = 1
-	Main.Notice.Size = UDim2.new(0, 0, 0, 0)
-	Main.Notice.Position = UDim2.new(0.5, 0, 0, -100)
-	Main.Notice.Visible = true
-
-
-	TweenService:Create(Main.Notice, TweenInfo.new(0.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {Size = UDim2.new(0, 280, 0, 35), Position = UDim2.new(0.5, 0, 0, -50), BackgroundTransparency = 0.5}):Play()
-	TweenService:Create(Main.Notice.Title, TweenInfo.new(0.5, Enum.EasingStyle.Exponential), {TextTransparency = 0.1}):Play()
-end
-
 if not useStudio then
 	task.spawn(loadWithTimeout, "https://raw.githubusercontent.com/SiriusSoftwareLtd/Sirius/refs/heads/request/boost.lua")
 end
 
 task.delay(4, function()
 	RayfieldLibrary.LoadConfiguration()
-	
 end)
 
 return RayfieldLibrary
